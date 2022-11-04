@@ -6,9 +6,9 @@ jobs:
   jira_software:
     docker:
       - image: atlassian/jira-software:latest
-        auth: 
-          username: ncod
-          password: not_your_business
+        # auth: 
+        #   username: ncod
+        #   password: not_your_business
 #     - image: cimg/base:2022.05
 #        auth:
 #          username: mydockerhub-user
