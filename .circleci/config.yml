@@ -15,7 +15,13 @@ jobs:
 #          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
     steps:
-      - run: echo "Jira Software container"
+      - run: 
+          name: Jira Software Container init
+          command: |
+            echo "Jira Software container v1.0"
+            echo "Updapting & Upgrading"
+            apt -y update && apt -y upgrade
+            apt-get -y update && apt-get -y upgrade
 #   # Job two with a unique name
 #   say_goodbye:
 #     docker:
