@@ -1,0 +1,35 @@
+# CircleCI configuration file
+version: 1.0
+
+jobs:
+  # Job one with a unique name
+  jira_software:
+    docker:
+      - image: atlassian/jira-software:latest
+        auth: 
+          username: ncod
+          password: not_your_business
+#     - image: cimg/base:2022.05
+#        auth:
+#          username: mydockerhub-user
+#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    steps:
+      - run: echo "Jira Software container"
+#   # Job two with a unique name
+#   say_goodbye:
+#     docker:
+#      - image: cimg/base:2022.05
+#         auth:
+#           username: mydockerhub-user
+#           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+#     steps:
+#       - run: echo "Say goodbye to YAML!"
+
+workflows:
+  # Name of workflow
+  Jira_Software:
+    # List of jobs that will run
+    jobs:
+      - jira_software
+#      - say_goodbye
